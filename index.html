@@ -535,165 +535,197 @@
             </div>
         </div>
 
-        <!-- SELL-SIDE REALITY CHECK -->
+        <!-- SELL-SIDE: WHO FILLS THE POOLS -->
         <div class="section">
-            <h2>Sell-side: the honest picture</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Tier-1 MMs (Wintermute, GSR, Cumberland, Jump, DWF, Flowdesk, B2C2, Keyrock) primarily serve tokens above $50M MC. They're outside our segment. Below, each sell-side channel is assessed with a strict filter: does this counterparty actually trade tokens under $5M MC?</p>
+            <h2>Sell-side: where the supply comes from</h2>
+            <p style="margin-bottom: 1.5rem; color: var(--text-2);">The buy-side numbers above measure demand we can win via aggregator routing. The other side: who has tokens to sell, and why would they use a C1 pool? Ordered by estimated opportunity size.</p>
 
-            <div class="callout red" style="margin-bottom: 2rem;">
-                <h3>Reality check</h3>
-                <p>There is no identified market maker that explicitly uses oracle-priced DEX liquidity pools as an exit venue for sub-$5M tokens. The sell-side won't come from tier-1 MMs. It will come from token project teams (via Series X) and individual holders (via unlock trackers).</p>
+            <!-- #1: MARKET MAKERS -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">1. Market makers (launch-day sell pressure)</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">Estimated annual flow: $500M-$1B across token launches. Highest volume, most repeatable.</p>
+
+            <div class="callout" style="margin-bottom: 1.5rem;">
+                <h3>How MMs create sell pressure</h3>
+                <p>MMs (Wintermute, DWF Labs, Flowdesk, etc.) receive 3-10% of token supply as loan inventory for providing launch liquidity. The standard play: sell borrowed tokens at or near TGE price, buy back at depressed prices weeks later, pocket the spread. This "delta neutral" strategy means MMs are systematically dumping tokens into thin DEX/CEX liquidity from day one. On small-cap launches, MM-orchestrated selling can represent 30-50% of launch-day volume.</p>
+                <p style="margin-top: 0.75rem;"><strong>Why C1 fits:</strong> Standard AMM pools suffer 5-15% slippage under unidirectional MM dump pressure. C1's oracle-priced execution with 1% flat fee gives MMs a controlled exit at fair value, reducing price distortion to 100-300bps vs 500-2000bps on AMM pools. MMs get better fills. Projects get less price destruction. FlowState captures the fee.</p>
             </div>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">1. Token vesting platforms</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Weaker fit than expected. All three major platforms serve primarily large-cap projects.</p>
 
             <div class="source-grid">
                 <div class="source-card">
-                    <h4>Magna</h4>
-                    <div class="meta">Acquired by Payward (Kraken parent) in 2025</div>
-                    <p>160+ clients, $60B peak TVL. Institutional and large-cap focused. Sub-$5M projects unlikely to be clients. Acquisition indicates consolidation toward enterprise use cases.</p>
-                    <div class="verdict" style="border-left-color: var(--red);">Not a realistic channel for C1</div>
+                    <h4>Wintermute</h4>
+                    <div class="meta">Largest crypto MM, $15B+ daily volume</div>
+                    <p>Operates loan model across hundreds of token launches. On-chain data shows systematic post-TGE selling patterns (e.g. Griffain: borrowed 4% of supply, sold at launch, bought back at 40% discount). Deep DEX/AMM provisioning capability.</p>
+                    <div class="verdict">Pitch: "better fills on your inventory rotation". Long sales cycle but highest single-counterparty volume.</div>
                 </div>
 
                 <div class="source-card">
+                    <h4>DWF Labs</h4>
+                    <div class="meta">1,000+ project portfolio, aggressive seller</div>
+                    <p>Known for taking large token positions then systematically liquidating. Portfolio skews toward small/mid-cap tokens, many now in the sub-$5M range. Has the inventory problem C1 solves.</p>
+                    <div class="verdict">Most aligned with C1's segment. Their small-cap bags are exactly our addressable.</div>
+                </div>
+
+                <div class="source-card">
+                    <h4>Flowdesk</h4>
+                    <div class="meta">French DASP, EU-regulated launches</div>
+                    <p>MMs for many EU-regulated token launches. Compliance-conscious, which makes oracle-priced execution attractive (auditable, predictable fills).</p>
+                    <div class="verdict">Good fit for post-MiCA token launches where price stability matters.</div>
+                </div>
+
+                <div class="source-card">
+                    <h4>Boutique MMs</h4>
+                    <div class="meta">Acheron, Gravity Team, Kairon Labs</div>
+                    <p>Acheron: 75 CEXs / 20 DEXs, first MiCA CASP license. Gravity Team: 1,400+ pairs, emerging market focus. Kairon Labs: KPI-driven listings. All primarily CEX-focused but handle launch inventory that needs DEX exit routes.</p>
+                    <div class="verdict">Lower volume per firm but collectively significant. Approach after tier-1 MM conversations establish the pattern.</div>
+                </div>
+            </div>
+
+            <!-- #2: VCs WITH DEAD PORTFOLIOS -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">2. VCs sitting on dead portfolios</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">Estimated trapped capital: $3.6B+ across 250+ dead projects from 2021-2023 vintage. ~50% of tier-1 VC portfolio companies have failed or become zombies.</p>
+
+            <div class="callout" style="margin-bottom: 1.5rem;">
+                <h3>The zombie portfolio problem</h3>
+                <p>VCs that deployed during 2021-2023 are sitting on token positions that are down 80-99% from ATH. Many of these tokens still trade, but with sub-$5M market caps and near-zero liquidity. The VCs can't sell on thin AMM pools without crashing the price further. OTC desks won't touch them. These are stranded assets, and C1 pools are the only venue offering oracle-priced exit at fair value.</p>
+            </div>
+
+            <div class="source-grid">
+                <div class="source-card">
+                    <h4>Polychain Capital</h4>
+                    <div class="meta">AUM fell from $6B to $2.6B (2021-2022)</div>
+                    <p>Highest concentration of zombie holdings among tier-1 VCs.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-2);"><strong>Dead projects:</strong> Scroll ($8.25M MC, down 99.5%), Notional Finance ($1.66M MC, down 99%), DerivaDAO (down 99%), Eclipse (down 64%), Starknet (down 95%)</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>a16z Crypto</h4>
+                    <div class="meta">$9B+ AUM, 50%+ portfolio dead</div>
+                    <p>Largest crypto VC by capital deployed. Massive exposure to zombie tokens.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-2);"><strong>Dead projects:</strong> Internet Computer (down 99.5%), Flow/Dapper Labs (down 96%), plus dozens of unlisted seed investments now at zero</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Paradigm</h4>
+                    <div class="meta">AUM fell 34% in 2022, 50%+ portfolio dead</div>
+                    <p>Deep technical focus but heavy L2 exposure during the rollup glut.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-2);"><strong>Dead projects:</strong> Starknet (down 95%), Yield Protocol (shut down 2023), plus infrastructure bets that never launched tokens</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Coinbase Ventures</h4>
+                    <div class="meta">Broad portfolio, high zombie count</div>
+                    <p>Spray-and-pray model means higher absolute number of dead positions.</p>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-2);"><strong>Dead projects:</strong> Notional Finance (down 99%), DerivaDAO (down 99%), Flow (down 96%)</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Multicoin Capital</h4>
+                    <div class="meta">Lost 91.4% of hedge fund value in 2022</div>
+                    <p>Heavy Solana exposure, FTX contagion (10% of AUM on exchange at collapse). Portfolio heavily impacted by Solana NFT/gaming ecosystem collapse.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>Other VCs with significant dead holdings</h4>
+                    <div class="meta">Dragonfly, Framework, Hack VC, Pantera, Galaxy, Animoca</div>
+                    <p>Dragonfly: DerivaDAO (down 99%). Framework: Yield Protocol (shut down). Galaxy: $482M Q4 2025 losses from legacy portfolio drag. Animoca: 50%+ portfolio failure rate. All have stranded token positions needing exit routes.</p>
+                </div>
+            </div>
+
+            <div class="callout" style="margin-top: 1rem; margin-bottom: 1.5rem;">
+                <h3>The pitch to VCs</h3>
+                <p><strong>"Orderly liquidation for your zombie tokens."</strong> C1 pools let VCs exit stranded positions at oracle price with 1% fee, instead of crashing the token on a thin Uniswap pool or writing the position off entirely. The realistic engagement path: approach via portfolio companies first (they use Series X for vesting, discover C1 as the exit route), then work up to fund-level conversations.</p>
+            </div>
+
+            <!-- #3: TOKEN UNLOCK TRACKERS -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">3. Token unlock trackers</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">Best distribution channel. They serve all token sizes including sub-$5M and reach holders at the exact moment of unlock.</p>
+
+            <div class="source-grid">
+                <div class="source-card">
+                    <h4>Tokenomist.ai</h4>
+                    <p>Real-time unlock calendars and analytics. All-token-size focus. Integration target: embed C1 as the recommended exit venue in unlock event cards.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>CryptoRank / Token Unlocks</h4>
+                    <p>Tracks vesting schedules, cliff dates, unlock percentages. Audience spans retail to institutions.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>DropsTab</h4>
+                    <p>Airdrop and unlock calendar. Granular token data. Good fit for discovering small-cap unlock events.</p>
+                </div>
+
+                <div class="source-card">
+                    <h4>CoinMarketCap</h4>
+                    <p>Tokenomics section includes unlock schedule. Massive audience. Partnership means embedding C1 as a liquidity option in CMC's unlock pages.</p>
+                </div>
+            </div>
+
+            <!-- #4: TOKEN PROJECT TEAMS VIA SERIES X -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">4. Token project teams (via Series X)</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">Highest-probability channel for sub-$5M tokens. Projects that use Series X for vesting become natural C1 customers.</p>
+
+            <div class="source-grid">
+                <div class="source-card">
+                    <h4>Series X user base</h4>
+                    <p>Projects using Series X for fundraising and vesting already have the relationship. The "claim and exit via C1 pool" CTA is a natural product extension. No cold BD required, just product integration.</p>
+                    <div class="verdict">Lowest cost to acquire. Build the integration, let it compound.</div>
+                </div>
+            </div>
+
+            <!-- #5: VESTING PLATFORMS -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">5. Token vesting platforms</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">The platforms themselves serve primarily large-cap, but their long-tail users are our audience.</p>
+
+            <div class="source-grid">
+                <div class="source-card">
                     <h4>Hedgey</h4>
                     <div class="meta">Acquired by Anchorage Digital (Dec 2025)</div>
-                    <p>Used by Uniswap DAO, Shapeshift. Free platform means small projects CAN use it, but marketing and case studies target established projects.</p>
-                    <div class="verdict">Higher potential than Magna. Target their long-tail users, not headline clients.</div>
+                    <p>Free platform means small projects CAN use it. Marketing targets established projects but long-tail user base exists.</p>
+                    <div class="verdict">Target their long-tail users, not headline clients.</div>
                 </div>
 
                 <div class="source-card">
                     <h4>Sablier</h4>
                     <div class="meta">500K+ vesting streams across EVM + Solana</div>
-                    <p>Battle-tested but validated by large-cap (Uniswap DAO). Sub-$5M projects may use it but aren't the target segment. Open source, which is a plus.</p>
-                    <div class="verdict">Realistic partner. Pitch to their long-tail user base, not the platform itself.</div>
+                    <p>Open source. Validated by large-cap but accessible to all sizes. Pitch to their long-tail user base.</p>
+                    <div class="verdict">Realistic partner. Open-source ethos aligns.</div>
+                </div>
+
+                <div class="source-card">
+                    <h4>Magna</h4>
+                    <div class="meta">Acquired by Payward (Kraken parent) in 2025</div>
+                    <p>160+ clients, $60B peak TVL. Institutional-only. Sub-$5M projects unlikely to be clients.</p>
+                    <div class="verdict" style="border-left-color: var(--red);">Not a realistic channel for C1.</div>
                 </div>
             </div>
 
-            <div class="callout amber" style="margin-top: 2rem;">
-                <h3>Echo removed</h3>
-                <p>Acquired by Coinbase (Oct 2025, $375M). Sonar competes with Series X, not a FlowState sell-side channel.</p>
-            </div>
+            <!-- #6: OTC & DAO -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">6. OTC desks and DAO treasuries</h3>
+            <p style="margin-bottom: 1rem; color: var(--text-2);">Lower priority. OTC desks serve $50M+ tokens and widen spreads to 20%+ on sub-$5M. DAOs rebalance infrequently. Both are opportunistic, not core.</p>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">2. Token unlock trackers</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Best fit. They serve all token sizes including sub-$5M.</p>
-
-            <div class="source-grid">
-                <div class="source-card">
-                    <h4>Tokenomist.ai</h4>
-                    <p>Real-time unlock calendars and token unlock analytics. All-token-size focus. Integration target: embed FlowState C1 as a recommended exit venue in unlock event cards.</p>
-                </div>
-
-                <div class="source-card">
-                    <h4>CryptoRank / Token Unlocks</h4>
-                    <p>Token unlock data for all projects. Tracks vesting schedules, cliff dates, unlock percentages. Audience spans retail to institutions.</p>
-                </div>
-
-                <div class="source-card">
-                    <h4>DropsTab</h4>
-                    <p>Crypto airdrop and unlock calendar. Granular token data. Good fit for discovering small-cap unlock events.</p>
-                </div>
-
-                <div class="source-card">
-                    <h4>CoinMarketCap</h4>
-                    <p>Tokenomics section includes unlock schedule. Massive audience. Partnership would mean embedding C1 C1 as a liquidity option in CMC's DeFi routes.</p>
-                </div>
-            </div>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">3. Long-tail market makers</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Narrow fit. Most are CEX-focused.</p>
-
-            <div class="source-grid">
-                <div class="source-card">
-                    <h4>Gotbit <span class="badge red">DISQUALIFIED</span></h4>
-                    <div class="meta">Founder sentenced for wire fraud and market manipulation</div>
-                    <p>Defunct as a legitimate provider. Reputational liability too high.</p>
-                </div>
-
-                <div class="source-card">
-                    <h4>Vortex <span class="badge red">DISQUALIFIED</span></h4>
-                    <div class="meta">Multiple Russian nationals charged with wire fraud conspiracy</div>
-                    <p>Compromised entity. Avoid entirely.</p>
-                </div>
-
-                <div class="source-card">
-                    <h4>Acheron Trading</h4>
-                    <div class="meta">Singapore-based, 75 CEXs / 20 DEXs</div>
-                    <p>First MiCA CASP licensed MM. Legitimate. BUT operational focus is CEX principal market-making, not DEX LP. Minimum engagement thresholds likely exclude sub-$5M tokens.</p>
-                    <div class="verdict">Low probability. If approached, expect institutional minimums.</div>
-                </div>
-
-                <div class="source-card">
-                    <h4>Gravity Team</h4>
-                    <div class="meta">Boutique MM, 1,400+ pairs</div>
-                    <p>Emerging market focus (SE Asia, Latin America, Africa). CEX-centric with DEX as secondary. Willingness to serve smaller caps possible but not proven.</p>
-                    <div class="verdict">Worth a probe but manage expectations.</div>
-                </div>
-
-                <div class="source-card">
-                    <h4>Kairon Labs</h4>
-                    <div class="meta">"Digital asset issuers" messaging</div>
-                    <p>Implies larger launches with exchange listings as primary. CEX-focused.</p>
-                    <div class="verdict">Likely too large for C1 addressable.</div>
-                </div>
-
-                <div class="source-card">
-                    <h4>Empirica</h4>
-                    <div class="meta">Claims "algorithmic LP for thin pools"</div>
-                    <p>Minimal public footprint. Cannot confirm sub-$5M service capability.</p>
-                    <div class="verdict">Unclear. Research deeper before BD attempt.</div>
-                </div>
-            </div>
-
-            <div class="callout red" style="margin-top: 2rem;">
-                <h3>The sell-side MM reality</h3>
-                <p>There is no identified market maker that uses DEX liquidity pools as an exit venue for sub-$5M tokens. Institutional MMs serve large-cap. When presented with a $3M MC token, they widen spreads to 20%+ or decline. Deprioritize the institutional MM channel.</p>
-            </div>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">4. Crypto OTC desks</h3>
-
-            <div class="source-grid">
-                <div class="source-card">
-                    <h4>OTC desks serve $50M+ tokens</h4>
-                    <div class="meta">Low fit for sub-$5M</div>
-                    <p>When presented with a $3M MC token, they widen spreads to 20%+ or decline. FlowState's pitch (fail-safe long-tail liquidity) is conceptually right but practically, OTC desks don't handle enough sub-$5M volume.</p>
-                    <div class="verdict red">Deprioritize.</div>
-                </div>
-            </div>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">5. Crypto VCs</h3>
-
-            <div class="source-grid">
-                <div class="source-card">
-                    <h4>VC engagement path</h4>
-                    <p>VCs won't engage with FlowState directly until there's traction. The realistic path: via portfolio companies. When a portfolio company uses Series X for vesting, the exit-via-C1 path becomes natural. This is the wedge to unlock VC channel buy-in.</p>
-                </div>
-            </div>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">6. DAO treasuries</h3>
-            <p style="color: var(--text-2);">DAO liquidity co-seeding is a legitimate channel for brand partnerships and long-tail token discovery. Lower priority due to heavy BD effort and low frequency.</p>
-
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">Revised sell-side sequencing</h3>
+            <!-- SEQUENCING -->
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">Sell-side sequencing</h3>
 
             <div class="playbook">
-                <h4>Phase 1: Now → end May</h4>
-                <p><strong>Hedgey + Sablier integration (long-tail user focus). Series X co-pitch.</strong> These are the open platforms. Target their sub-$5M user base, not the platforms themselves.</p>
+                <h4>Phase 1: Now → end May (alongside TGE)</h4>
+                <p><strong>MM conversations.</strong> Start with DWF Labs (most aligned segment, largest small-cap inventory) and Wintermute (highest volume). Pitch: "better fills on your launch inventory rotation via oracle-priced pools". Simultaneously: Hedgey + Sablier integration for their long-tail users. Series X co-pitch.</p>
             </div>
 
             <div class="playbook">
                 <h4>Phase 2: June → July</h4>
-                <p><strong>Unlock tracker partnerships (Tokenomist, DropsTab, CMC). Embed C1 in unlock event cards.</strong> These serve all token sizes and have direct reach to unlock events.</p>
+                <p><strong>Unlock tracker partnerships.</strong> Tokenomist, DropsTab, CoinMarketCap. Embed C1 as the exit venue in unlock event cards. These reach holders at the moment of decision.</p>
             </div>
 
             <div class="playbook">
-                <h4>Phase 3: July onwards</h4>
-                <p><strong>Direct token project BD via Series X user base. This is the highest-probability channel for sub-$5M tokens.</strong> Projects that use Series X for vesting become natural C1 customers.</p>
+                <h4>Phase 3: July → September</h4>
+                <p><strong>VC portfolio company outreach.</strong> Approach via Series X user base first. Target Polychain, Coinbase Ventures, a16z portfolio companies with zombie tokens. The pitch: "orderly liquidation at oracle price". Work up from portfolio companies to fund-level relationships.</p>
             </div>
 
-            <div class="callout amber">
-                <h3>De-prioritize</h3>
-                <p>Institutional MMs, OTC desks, large-cap vesting platforms. Not our segment. Focus on channels that explicitly serve or can reach sub-$5M projects.</p>
+            <div class="playbook">
+                <h4>Phase 4: Q4 onwards</h4>
+                <p><strong>Boutique MMs and scale.</strong> Acheron, Gravity Team, Flowdesk. By this point C1 should have transaction data proving better fills vs AMM, which makes the pitch concrete instead of theoretical.</p>
             </div>
         </div>
 
@@ -722,7 +754,7 @@
             <div class="callout">
                 <h3>Bottom line</h3>
                 <p><strong>Buy-side:</strong> Ethereum remains the largest chain by aggregator-routed volume ($20.6B/30d). But FlowState's actual addressable is a fraction of this — the sub-$5M MC slice. The headline numbers tell us where to deploy, not how much revenue to expect. Solana is co-priority via Jupiter. Base and BSC are secondary, post-Ethereum TGE.</p>
-                <p><strong>Sell-side:</strong> Tier-1 MMs serve large-cap. Vesting platforms serve large-cap. The realistic sell-side channels are: (1) token project teams using Series X, (2) individual holders via unlock trackers, (3) boutique platforms (Hedgey, Sablier) if we target their long-tail users. Deprioritize institutional MMs and OTC desks.</p>
+                <p><strong>Sell-side:</strong> Three high-volume channels: (1) MMs dumping launch inventory, estimated $500M-$1B annually, C1 gives them better fills than AMMs; (2) VCs trapped in zombie portfolios, $3.6B+ stranded across 250+ dead projects from 2021-2023; (3) token project teams via Series X integration. Unlock trackers and vesting platforms are distribution channels to reach holders at the moment of decision.</p>
                 <p><strong>Watchlist:</strong> Plasma play unchanged (asymmetric, zero-cost). Monad growing (+22% agg volume) and already covered via KyberSwap. Other chains are tail traffic.</p>
                 <p><strong>Critical gap:</strong> Token-tier volume data. Without per-token MC breakdowns, the headline addressable numbers are directionally useful but magnitude-uncertain. Pursue granular token-level data in next cycle.</p>
             </div>
