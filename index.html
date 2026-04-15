@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowState Market Opportunity v3</title>
+    <title>FlowState Market Opportunity</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
     <style>
@@ -209,44 +209,6 @@
         .verdict.strong {
             border-left-color: var(--teal);
         }
-        .steelman-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        .steelman-card .conclusion {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--teal);
-            margin-bottom: 1rem;
-        }
-        .steelman-card .counter {
-            background: var(--surface-2);
-            padding: 1rem;
-            border-radius: 4px;
-            margin-bottom: 1rem;
-            border-left: 3px solid var(--amber);
-        }
-        .steelman-card .counter-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--amber);
-            margin-bottom: 0.5rem;
-        }
-        .steelman-card .verdict-box {
-            background: var(--surface-2);
-            padding: 1rem;
-            border-radius: 4px;
-            border-left: 3px solid var(--teal);
-        }
-        .steelman-card .verdict-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: var(--teal);
-            margin-bottom: 0.5rem;
-        }
         .badge {
             display: inline-block;
             background: var(--surface-2);
@@ -353,20 +315,7 @@
         <div class="hero">
             <h1>Where the volume actually lives</h1>
             <p class="subtitle">Chain-by-chain analysis of C1 pool opportunity, with sell-side reality check and token-segment honesty.</p>
-            <p class="meta">v3 extended · 15 April 2026 · Source: DefiLlama 30d</p>
-        </div>
-
-        <!-- V3 CHANGELOG -->
-        <div class="callout">
-            <h3>v3 changelog: what changed</h3>
-            <ul>
-                <li><strong>Added:</strong> Steelman analysis of 5 core conclusions with counterarguments and verdicts</li>
-                <li><strong>Added:</strong> Sell-side targets re-tiered with strict sub-$5M MC filter (Wintermute/GSR/Cumberland removed; long-tail MMs assessed)</li>
-                <li><strong>Added:</strong> Vesting platform fit re-evaluated (Magna acquired by Kraken, Hedgey by Anchorage — both serve large-cap primarily)</li>
-                <li><strong>Added:</strong> Echo removed from sell-side (acquired by Coinbase Oct 2025 for $375M; Sonar competes with Series X)</li>
-                <li><strong>Unchanged:</strong> All chain numbers validated within 2% of v2 baseline (only Optimism -16% and Monad +22% flagged)</li>
-                <li><strong>Missing from v3:</strong> Token-tier analysis (per-token MC-tier volume CSVs not available; noted as gap)</li>
-            </ul>
+            <p class="meta">15 April 2026 · Source: DefiLlama 30d</p>
         </div>
 
         <!-- METHODOLOGY -->
@@ -577,7 +526,7 @@
 
             <div class="playbook">
                 <h4>Monad: watch and react</h4>
-                <p>Growing fast (+22% aggregator volume from v2). $1.64B total DEX, $0.24B addressable, KyberSwap at 84%. High-performance L1 thesis is compelling but execution is still unproven. The play: don't invest in Monad-specific BD now. Wait for Q3 2026 (network stability proof). If growth continues, KyberSwap deployment handles routing automatically. Revisit post-summer.</p>
+                <p>Growing fast (+22% aggregator volume month-over-month). $1.64B total DEX, $0.24B addressable, KyberSwap at 84%. High-performance L1 thesis is compelling but execution is still unproven. The play: don't invest in Monad-specific BD now. Wait for Q3 2026 (network stability proof). If growth continues, KyberSwap deployment handles routing automatically. Revisit post-summer.</p>
             </div>
 
             <div class="playbook">
@@ -586,84 +535,18 @@
             </div>
         </div>
 
-        <!-- STEELMAN ANALYSIS -->
-        <div class="section">
-            <h2>Steelmanning the v2 conclusions</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">For each of the 5 core conclusions, the strongest counterargument and the verdict on whether it holds.</p>
-
-            <div class="steelman-card">
-                <div class="conclusion">(a) "Ethereum is the largest single addressable at $20.6B/30d, 4x next chain"</div>
-                <div class="counter">
-                    <div class="counter-label">Strongest counterargument</div>
-                    <p>$20.6B is the gross aggregator-routed number. FlowState serves sub-$5M MC tokens. The vast majority of Ethereum aggregator volume is ETH/USDC, ETH/USDT, major DeFi tokens — all above $50M MC. The actual addressable slice for C1 pools could be 1-5% of the headline number ($200M-$1B), not $20.6B. We don't have per-token data to prove otherwise.</p>
-                </div>
-                <div class="verdict-box">
-                    <div class="verdict-label">Verdict: HOLDS DIRECTIONALLY</div>
-                    <p>The conclusion holds (Ethereum still has the most long-tail token diversity), but the headline number is misleading. The real addressable for C1's segment is 1-2 orders of magnitude smaller. This is the single most important number gap in the analysis.</p>
-                </div>
-            </div>
-
-            <div class="steelman-card">
-                <div class="conclusion">(b) "Solana is co-Priority 1 via Jupiter (68% of Solana agg flow)"</div>
-                <div class="counter">
-                    <div class="counter-label">Strongest counterargument</div>
-                    <p>Solana's memecoin culture means most sub-$5M MC tokens are launched-and-dumped within hours. The average lifespan of a Solana memecoin is too short for a C1 pool to be seeded and discovered. Jupiter integration gives access to volume, but token churn means the addressable is "tokens older than 7 days AND under $5M MC" — a much smaller set.</p>
-                </div>
-                <div class="verdict-box">
-                    <div class="verdict-label">Verdict: HOLDS WITH CAVEAT</div>
-                    <p>The Solana long-tail is real and launch density is highest on Solana. But the churn filter is legitimate. The sweet spot: tokens that graduate from pump.fun/Raydium but haven't reached CEX listings. That's where C1 exit liquidity has real value.</p>
-                </div>
-            </div>
-
-            <div class="steelman-card">
-                <div class="conclusion">(c) "BSC is hard because LiquidMesh dominates and PancakeSwap MM is gated"</div>
-                <div class="counter">
-                    <div class="counter-label">Strongest counterargument</div>
-                    <p>LiquidMesh is a wallet-facing API (not a traditional aggregator with an open integration path). However, OKX Swap is #2 at 18.8% and OKX integration is already in FlowState's pipeline. That alone gets ~$1.1B of addressable. The "BSC is hard" framing may be overstated.</p>
-                </div>
-                <div class="verdict-box">
-                    <div class="verdict-label">Verdict: MOSTLY HOLDS, SOFTEN LANGUAGE</div>
-                    <p>BSC is harder than Ethereum but not a write-off. OKX path is real and actionable. LiquidMesh is genuinely hard (proprietary, Binance ecosystem-gated). Recommendation: Priority 3, pursue OKX BSC integration as a side-win to Ethereum TGE.</p>
-                </div>
-            </div>
-
-            <div class="steelman-card">
-                <div class="conclusion">(d) "Base needs OpenOcean and 0x, not just KyberSwap"</div>
-                <div class="counter">
-                    <div class="counter-label">Strongest counterargument</div>
-                    <p>KyberSwap is growing on Base (9.2%). If FlowState pools offer better execution for long-tail tokens, KyberSwap routing will naturally route more volume through C1. The marginal BD effort to add OpenOcean/0x may not be worth it if KyberSwap routing improves organically.</p>
-                </div>
-                <div class="verdict-box">
-                    <div class="verdict-label">Verdict: HOLDS</div>
-                    <p>9.2% is too small to rely on. OpenOcean at 35.2% is dominant and the gap is too large to ignore. Priority ordering: Ethereum TGE first, Base BD second wave (summer 2026). Don't try to do both at once.</p>
-                </div>
-            </div>
-
-            <div class="steelman-card">
-                <div class="conclusion">(e) "Plasma is the asymmetric watchlist bet"</div>
-                <div class="counter">
-                    <div class="counter-label">Strongest counterargument</div>
-                    <p>Plasma is $0.3B total DEX, $0.21B addressable. Even at 100% capture that's $2.1M annual revenue at 1% fee. The "asymmetric" framing assumes Plasma grows 10x, but stablecoin-focused L1s have historically struggled. The 2.5B XPL unlock in July 2026 could crash the chain's native token and deflate TVL.</p>
-                </div>
-                <div class="verdict-box">
-                    <div class="verdict-label">Verdict: STILL HOLDS</div>
-                    <p>The asymmetry isn't about revenue today. It's about near-zero cost of deployment (KyberSwap already routes there). If Plasma grows, we're positioned. If not, wasted effort was ~2 days. The unlock risk is real but doesn't change the risk/reward. Maintain as a no-cost side-win.</p>
-                </div>
-            </div>
-        </div>
-
         <!-- SELL-SIDE REALITY CHECK -->
         <div class="section">
             <h2>Sell-side: the honest picture</h2>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">The v2 report listed Wintermute, GSR, Cumberland, Jump, DWF, Flowdesk, B2C2, and Keyrock as targets. These firms primarily serve tokens above $50M MC. Applying a strict filter: does this counterparty actually trade tokens under $5M MC?</p>
+            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Tier-1 MMs (Wintermute, GSR, Cumberland, Jump, DWF, Flowdesk, B2C2, Keyrock) primarily serve tokens above $50M MC. They're outside our segment. Below, each sell-side channel is assessed with a strict filter: does this counterparty actually trade tokens under $5M MC?</p>
 
             <div class="callout red" style="margin-bottom: 2rem;">
                 <h3>Reality check</h3>
-                <p>The institutional MM channel in v2 was aspirational. The honest assessment: there is no identified market maker that explicitly uses oracle-priced DEX liquidity pools as an exit venue for sub-$5M tokens. The sell-side won't come from tier-1 MMs. It will come from token project teams (via Series X) and individual holders (via unlock trackers).</p>
+                <p>There is no identified market maker that explicitly uses oracle-priced DEX liquidity pools as an exit venue for sub-$5M tokens. The sell-side won't come from tier-1 MMs. It will come from token project teams (via Series X) and individual holders (via unlock trackers).</p>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">1. Token vesting platforms (RE-EVALUATED)</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Weaker fit than v2 suggested.</p>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">1. Token vesting platforms</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Weaker fit than expected. All three major platforms serve primarily large-cap projects.</p>
 
             <div class="source-grid">
                 <div class="source-card">
@@ -693,8 +576,8 @@
                 <p>Acquired by Coinbase (Oct 2025, $375M). Sonar competes with Series X, not a FlowState sell-side channel.</p>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">2. Token unlock trackers (UNCHANGED)</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Still the best fit because they serve all token sizes including sub-$5M.</p>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">2. Token unlock trackers</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Best fit. They serve all token sizes including sub-$5M.</p>
 
             <div class="source-grid">
                 <div class="source-card">
@@ -718,8 +601,8 @@
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">3. Long-tail market makers (NEW)</h3>
-            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Narrow fit and most are CEX-focused.</p>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">3. Long-tail market makers</h3>
+            <p style="margin-bottom: 1.5rem; color: var(--text-2);">Narrow fit. Most are CEX-focused.</p>
 
             <div class="source-grid">
                 <div class="source-card">
@@ -768,7 +651,7 @@
                 <p>There is no identified market maker that uses DEX liquidity pools as an exit venue for sub-$5M tokens. Institutional MMs serve large-cap. When presented with a $3M MC token, they widen spreads to 20%+ or decline. Deprioritize the institutional MM channel.</p>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">4. Crypto OTC desks (DOWNGRADED)</h3>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">4. Crypto OTC desks</h3>
 
             <div class="source-grid">
                 <div class="source-card">
@@ -779,7 +662,7 @@
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">5. Crypto VCs (UNCHANGED priority + context)</h3>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">5. Crypto VCs</h3>
 
             <div class="source-grid">
                 <div class="source-card">
@@ -788,8 +671,8 @@
                 </div>
             </div>
 
-            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">6. DAO treasuries (UNCHANGED)</h3>
-            <p style="color: var(--text-2);">Same as v2. DAO liquidity co-seeding is still a legitimate channel for brand partnerships and long-tail token discovery.</p>
+            <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">6. DAO treasuries</h3>
+            <p style="color: var(--text-2);">DAO liquidity co-seeding is a legitimate channel for brand partnerships and long-tail token discovery. Lower priority due to heavy BD effort and low frequency.</p>
 
             <h3 style="margin-bottom: 1.5rem; margin-top: 2rem;">Revised sell-side sequencing</h3>
 
@@ -839,7 +722,7 @@
             <div class="callout">
                 <h3>Bottom line</h3>
                 <p><strong>Buy-side:</strong> Ethereum remains the largest chain by aggregator-routed volume ($20.6B/30d). But FlowState's actual addressable is a fraction of this — the sub-$5M MC slice. The headline numbers tell us where to deploy, not how much revenue to expect. Solana is co-priority via Jupiter. Base and BSC are secondary, post-Ethereum TGE.</p>
-                <p><strong>Sell-side:</strong> The v2 sell-side thesis was too optimistic. MMs serve large-cap. Vesting platforms serve large-cap. The realistic sell-side channels are: (1) token project teams using Series X, (2) individual holders via unlock trackers, (3) boutique platforms (Hedgey, Sablier) if we target their long-tail users. Plan accordingly. Deprioritize institutional MMs and OTC desks.</p>
+                <p><strong>Sell-side:</strong> Tier-1 MMs serve large-cap. Vesting platforms serve large-cap. The realistic sell-side channels are: (1) token project teams using Series X, (2) individual holders via unlock trackers, (3) boutique platforms (Hedgey, Sablier) if we target their long-tail users. Deprioritize institutional MMs and OTC desks.</p>
                 <p><strong>Watchlist:</strong> Plasma play unchanged (asymmetric, zero-cost). Monad growing (+22% agg volume) and already covered via KyberSwap. Other chains are tail traffic.</p>
                 <p><strong>Critical gap:</strong> Token-tier volume data. Without per-token MC breakdowns, the headline addressable numbers are directionally useful but magnitude-uncertain. Pursue granular token-level data in next cycle.</p>
             </div>
